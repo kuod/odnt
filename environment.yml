@@ -46,3 +46,17 @@ dependencies:
     #   pip install cell-gears
     #   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
     #   pip install torch_geometric
+    # ---------------------------------------------------------------
+    # Theis ecosystem (theis_ecosystem/ notebooks)
+    # Install separately or uncomment as needed:
+    # - scvi-tools>=1.1        # T01: deep generative models + integration
+    # - squidpy>=1.6           # T02: spatial transcriptomics
+    # - scvelo>=0.3            # T03: RNA velocity (CellRank dependency)
+    # - cellrank>=2.0          # T03: trajectory inference
+    # - mofapy2>=0.7           # T04: multi-omics factor analysis
+    # - scirpy>=0.22           # TCR/BCR immune repertoire analysis
+    # - spatialdata>=0.2       # modern spatial data container (Visium HD, etc.)
+    # - rapids-singlecell      # GPU-accelerated scanpy (requires CUDA 12+)
+    #
+    # Quick install of all theis_ecosystem dependencies:
+    #   pip install scvi-tools squidpy scvelo cellrank mofapy2 scirpy spatialdata
