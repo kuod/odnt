@@ -4,7 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**perturb-101** is a sequential, end-to-end tutorial curriculum for Perturb-seq analysis — combining CRISPR perturbations with single-cell RNA-seq. It is a pure documentation/tutorial project with no software package or build system.
+**perturb-101** is a tutorial curriculum repository with two series:
+1. **`perturb_seq/`** — sequential end-to-end Perturb-seq analysis (CRISPR + scRNA-seq)
+2. **`theis_ecosystem/`** — hands-on refresher for the full scverse / Theis lab tool stack
+
+Pure documentation/tutorial project; no software package or build system.
 
 ## Environment Setup
 
@@ -16,16 +20,30 @@ jupyter lab
 
 There are no build, test, or lint commands — each notebook is self-contained and run interactively in JupyterLab.
 
-## Curriculum Structure
+## Repository Structure
 
-13 numbered units (00–12 plus gap analysis at 13), mixing Markdown guides and Jupyter notebooks:
+```
+perturb-101/
+├── perturb_seq/          # Perturb-seq curriculum (00–13)
+│   ├── 00–02, 04         # Markdown conceptual guides
+│   ├── 03                # Data download (Norman 2019, Replogle 2022 via pooch)
+│   ├── 05–12             # QC → guide assignment → normalization → DE → Mixscape
+│   │                     #   → visualization → genetic interactions → GRN
+│   ├── 13                # Gap analysis and roadmap
+│   ├── glossary.md
+│   └── tools_reference.md
+├── theis_ecosystem/      # scverse ecosystem refresher (T00–T04)
+│   ├── T00               # AnnData + Scanpy foundations
+│   ├── T01               # scvi-tools (deep generative models, integration)
+│   ├── T02               # Squidpy (spatial transcriptomics)
+│   ├── T03               # CellRank 2 (trajectory inference)
+│   └── T04               # Muon + MOFA+ (multi-modal)
+├── data/                 # git-ignored; created at runtime
+├── environment.yml
+└── README.md
+```
 
-- **00–02, 04** — Markdown conceptual guides (overview, experimental design, guide RNA design, raw processing)
-- **03** — Notebook: data download (Norman 2019 CRISPRa, Replogle 2022 CRISPRi datasets via `pooch`)
-- **05–12** — Notebooks: QC → guide assignment → normalization → perturbation effects → escape detection → visualization → genetic interactions → GRN inference
-- **13** — Gap analysis and roadmap
-
-Notebooks must be run in order; 03 downloads raw data to `data/` (git-ignored). Notebooks 08 and 09 can run in parallel after 07.
+Perturb-seq notebooks must run in order; 03 downloads raw data to `../data/` (git-ignored). Notebooks 08 and 09 can run in parallel after 07. All intermediate `.h5ad` files land in `data/` at repo root.
 
 ## Key Architecture Decisions
 
@@ -48,7 +66,7 @@ Notebooks must be run in order; 03 downloads raw data to `data/` (git-ignored). 
 - Statistical power analysis absent
 - Multiple testing correction across perturbations not addressed
 
-## Supporting Reference Files
+## Supporting Reference Files (in `perturb_seq/`)
 
 - **glossary.md** — Definitions for all domain-specific terms
 - **tools_reference.md** — Pros/cons/differentiators for every tool across the pipeline
