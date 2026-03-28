@@ -195,6 +195,7 @@ Before committing a new series, verify:
 |--------|--------|-----------|---------------|
 | `perturb_seq/` | `NN_` | 00–14 | scanpy, pertpy, pydeseq2, mixscape, milopy |
 | `theis_ecosystem/` | `T0N_` | T00–T08 | anndata, scanpy, scvi-tools, squidpy, cellrank, muon, liana, cell2location, moscot, sccoda |
+| `spatial_transcriptomics/` | `SP0N_` | SP00–SP04 | spatialdata, squidpy, banksy-py, GraphST, moscot |
 
 ---
 

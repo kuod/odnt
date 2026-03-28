@@ -4,9 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**perturb-101** is a tutorial curriculum repository with two series:
+**perturb-101** is a tutorial curriculum repository with three series:
 1. **`perturb_seq/`** — sequential end-to-end Perturb-seq analysis (CRISPR + scRNA-seq)
 2. **`theis_ecosystem/`** — hands-on refresher for the full scverse / Theis lab tool stack
+3. **`spatial_transcriptomics/`** — spatial omics from Visium to sub-cellular resolution
 
 Pure documentation/tutorial project; no software package or build system.
 
@@ -44,6 +45,12 @@ perturb-101/
 │   ├── T06               # cell2location (spatial deconvolution)
 │   ├── T07               # Moscot (optimal transport trajectories + spatial)
 │   └── T08               # scCODA (compositional cell type analysis)
+├── spatial_transcriptomics/  # Spatial omics series (SP00–SP04)
+│   ├── SP00              # SpatialData container (Zarr, coordinate systems)
+│   ├── SP01              # Visium in depth (spatial QC, regional DE, H&E features)
+│   ├── SP02              # Spatial domain detection (BANKSY, GraphST)
+│   ├── SP03              # Sub-cellular resolution (seqFISH+, Xenium data model)
+│   └── SP04              # Multi-sample integration (Moscot alignment, Harmony)
 ├── data/                 # git-ignored; created at runtime
 ├── environment.yml
 └── README.md

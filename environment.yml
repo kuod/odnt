@@ -61,3 +61,14 @@ dependencies:
     # Quick install of all theis_ecosystem dependencies:
     #   pip install scvi-tools squidpy scvelo cellrank mofapy2 scirpy spatialdata \
     #               scrublet liana cell2location moscot sccoda milopy
+    #
+    # Spatial transcriptomics (spatial_transcriptomics/ notebooks)
+    # Adds SpatialData container + domain detection tools on top of squidpy:
+    # - spatialdata>=0.2        # SP00: modern spatial container (Zarr-backed)
+    # - spatialdata-io>=0.1     # SP00: platform loaders (Visium, Xenium, MERFISH)
+    # - spatialdata-plot>=0.2   # SP00: chained .pl visualization API
+    # - banksy-py>=0.1          # SP02: spatial domain detection (Singhal 2024)
+    # - GraphST>=1.0            # SP02: graph attention domain detection (Long 2023)
+    #
+    # Quick install of spatial_transcriptomics dependencies:
+    #   pip install spatialdata spatialdata-io spatialdata-plot banksy-py GraphST
