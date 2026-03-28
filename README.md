@@ -1,6 +1,6 @@
-# perturb-101
+# odnt
 
-A sequentially numbered, end-to-end tutorial for Perturb-seq analysis. Designed for bioinformaticians who know single-cell RNA-seq and want to learn the Perturb-seq-specific concepts, workflows, and tools.
+Old Dog. New Tricks. A sequentially numbered, end-to-end tutorial for different analyses like perturb-seq, spatial transcriptomics, scrnaseq etc. Designed for bioinformaticians who know single-cell RNA-seq and want to learn the Perturb-seq-specific concepts, workflows, and tools.
 
 ---
 
