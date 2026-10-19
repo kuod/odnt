@@ -8,22 +8,27 @@ Old Dog. New Tricks. A sequentially numbered, end-to-end tutorial for different 
 
 | # | File | Type | Topic | Dataset | Est. Time |
 |---|------|------|-------|---------|-----------|
-| 00 | [00_overview.md](00_overview.md) | Markdown | What Perturb-seq is and why it exists | — | 20 min |
-| 01 | [01_experimental_design.md](01_experimental_design.md) | Markdown | MOI, power, controls, sequencing depth | — | 25 min |
-| 02 | [02_guide_design.md](02_guide_design.md) | Markdown | gRNA scoring, TSS targeting, barcodes | — | 20 min |
-| 03 | [03_data_acquisition.ipynb](03_data_acquisition.ipynb) | Notebook | Download and inspect public datasets | Norman 2019, Replogle 2022 | 1.5 hr |
-| 04 | [04_raw_processing_overview.md](04_raw_processing_overview.md) | Markdown | Cell Ranger / STARsolo / kb-python | — | 30 min |
-| 05 | [05_quality_control.ipynb](05_quality_control.ipynb) | Notebook | scRNA-seq QC + guide UMI QC | Norman 2019 | 2 hr |
-| 06 | [06_guide_assignment.ipynb](06_guide_assignment.ipynb) | Notebook | Assign guides to cells; multiplet handling | Norman 2019 | 2 hr |
-| 07 | [07_normalization_dimred.ipynb](07_normalization_dimred.ipynb) | Notebook | NTC-anchored PCA, cell cycle, UMAP | Norman 2019 | 2 hr |
-| 08 | [08_perturbation_effects.ipynb](08_perturbation_effects.ipynb) | Notebook | Pseudobulk DE (PyDESeq2), effect sizes | Replogle 2022 | 3 hr |
-| 09 | [09_mixscape.ipynb](09_mixscape.ipynb) | Notebook | Escape detection with Mixscape | Norman 2019 | 2 hr |
-| 10 | [10_visualization.ipynb](10_visualization.ipynb) | Notebook | Volcano, heatmap, perturbation UMAP | Both | 2.5 hr |
-| 11 | [11_genetic_interactions.ipynb](11_genetic_interactions.ipynb) | Notebook | Additive model, interaction scores | Norman 2019 | 3 hr |
-| 12 | [12_grn_and_prediction.ipynb](12_grn_and_prediction.ipynb) | Notebook | TF activity, GEARS, linear baseline | Both | 3–5 hr |
-| — | [glossary.md](glossary.md) | Markdown | Key terms A–Z | — | Reference |
+| 00 | [00_overview.md](perturb_seq/00_overview.md) | Markdown | What Perturb-seq is and why it exists | — | 20 min |
+| 01 | [01_experimental_design.md](perturb_seq/01_experimental_design.md) | Markdown | MOI, power, controls, sequencing depth | — | 25 min |
+| 02 | [02_guide_design.md](perturb_seq/02_guide_design.md) | Markdown | gRNA scoring, TSS targeting, barcodes | — | 20 min |
+| 03 | [03_data_acquisition.ipynb](perturb_seq/03_data_acquisition.ipynb) | Notebook | Download and inspect public datasets | Norman 2019, Replogle 2022 | 1.5 hr |
+| 04 | [04_raw_processing_overview.md](perturb_seq/04_raw_processing_overview.md) | Markdown | Cell Ranger / STARsolo / kb-python | — | 30 min |
+| 05 | [05_quality_control.ipynb](perturb_seq/05_quality_control.ipynb) | Notebook | scRNA-seq QC + guide UMI QC | Norman 2019 | 2 hr |
+| 06 | [06_guide_assignment.ipynb](perturb_seq/06_guide_assignment.ipynb) | Notebook | Assign guides to cells; multiplet handling | Norman 2019 | 2 hr |
+| 07 | [07_normalization_dimred.ipynb](perturb_seq/07_normalization_dimred.ipynb) | Notebook | NTC-anchored PCA, cell cycle, UMAP | Norman 2019 | 2 hr |
+| 08 | [08_perturbation_effects.ipynb](perturb_seq/08_perturbation_effects.ipynb) | Notebook | Pseudobulk DE (PyDESeq2), effect sizes | Replogle 2022 | 3 hr |
+| 09 | [09_mixscape.ipynb](perturb_seq/09_mixscape.ipynb) | Notebook | Escape detection with Mixscape | Norman 2019 | 2 hr |
+| 10 | [10_visualization.ipynb](perturb_seq/10_visualization.ipynb) | Notebook | Volcano, heatmap, perturbation UMAP | Both | 2.5 hr |
+| 11 | [11_genetic_interactions.ipynb](perturb_seq/11_genetic_interactions.ipynb) | Notebook | Additive model, interaction scores | Norman 2019 | 3 hr |
+| 12 | [12_grn_and_prediction.ipynb](perturb_seq/12_grn_and_prediction.ipynb) | Notebook | TF activity, GEARS, linear baseline | Both | 3–5 hr |
+| 13 | [13_differential_abundance.ipynb](perturb_seq/13_differential_abundance.ipynb) | Notebook | Differential abundance (Milo) | Norman 2019 | 2 hr |
+| 14 | [14_batch_correction.ipynb](perturb_seq/14_batch_correction.ipynb) | Notebook | Batch correction (Harmony, scVI) | Norman 2019 | 2 hr |
+| — | [13_gap_analysis_and_roadmap.md](perturb_seq/13_gap_analysis_and_roadmap.md) | Markdown | Gaps and stretch topics | — | Reference |
+| — | [glossary.md](perturb_seq/glossary.md) | Markdown | Key terms A–Z | — | Reference |
 
-**Total estimated time:** ~25–30 hours
+**Total estimated time:** ~25–30 hours for the core Perturb-seq series (00–12). The extra notebooks (13–14), `theis_ecosystem/` and `spatial_transcriptomics/` series (see their READMEs) are additional.
+
+Notebooks 13 and 14 need optional packages (`milopy`; `scvi-tools` for the scVI half of 14) — see `environment.yml`.
 
 ---
 
@@ -39,8 +44,8 @@ Old Dog. New Tricks. A sequentially numbered, end-to-end tutorial for different 
 
 ```bash
 # Clone and enter the repo
-git clone <repo-url>
-cd perturb-101
+git clone git@github.com:kuod/perturbseq-101.git odnt
+cd odnt
 
 # Create the conda environment
 conda env create -f environment.yml
@@ -61,7 +66,7 @@ All data is downloaded programmatically in **notebook 03**. Two public datasets 
 | Norman et al. 2019 | *Science* 365, eaax4438 | Figshare | ~109k cells, 236 perturbations |
 | Replogle et al. 2022 (K562 Essential) | *Cell* 185, 2117–2128 | Figshare | ~650k cells, 2,057 perturbations |
 
-Downloaded files are stored in `data/` (gitignored). Notebook 03 also saves a smaller Norman subset for fast iteration.
+Downloaded files are stored in `data/` at the repo root (gitignored; notebooks use `../data`). Notebook 03 also saves a smaller Norman subset for fast iteration.
 
 ---
 

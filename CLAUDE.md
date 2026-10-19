@@ -19,7 +19,7 @@ conda activate perturb-101
 jupyter lab
 ```
 
-There are no build, test, or lint commands — each notebook is self-contained and run interactively in JupyterLab.
+There is no build system. Static repo checks (notebook syntax, data-dir consistency, markdown links) run with `python -m unittest discover tests` (stdlib only, no datasets needed). Notebooks themselves are run interactively in JupyterLab.
 
 ## Repository Structure
 
@@ -56,7 +56,7 @@ perturb-101/
 └── README.md
 ```
 
-Perturb-seq notebooks must run in order; 03 downloads raw data to `../data/` (git-ignored). Notebooks 08 and 09 can run in parallel after 07. All intermediate `.h5ad` files land in `data/` at repo root.
+Perturb-seq notebooks must run in order; 03 downloads raw data to `../data/` (git-ignored). Notebooks 08 and 09 can run in parallel after 07. All intermediate `.h5ad` files land in `data/` at repo root (notebooks use `DATA_DIR = "../data"`; `tests/test_repo.py` checks this).
 
 ## Key Architecture Decisions
 
@@ -73,7 +73,7 @@ Perturb-seq notebooks must run in order; 03 downloads raw data to `../data/` (gi
 ## Known Gaps (from 13_gap_analysis_and_roadmap.md)
 
 - Guide UMI matrix in notebook 06 is simulated, not real Cell Ranger output
-- Batch correction not covered (harmonypy/scvi-tools are commented out in environment.yml)
+- Batch correction is covered in notebook 14, but scvi-tools is an optional (commented-out) install in environment.yml; harmonypy is installed by default
 - SCEPTRE (rigorous permutation-based DE) not runnable from Python
 - GEARS deep learning deferred (requires GPU); only a linear baseline is demonstrated
 - Statistical power analysis absent
