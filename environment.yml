@@ -37,9 +37,12 @@ dependencies:
     - scipy>=1.11
     - numpy>=1.26
     - pandas>=2.0
-    # Optional: batch correction
+    # Batch correction (notebook 14) and differential abundance (notebook 13)
     - harmonypy>=0.0.9
-    # Optional: scVI (heavy; comment out if RAM-limited)
+    - milopy>=0.1       # notebook 13 (Milo); imports `milopy`
+    # Optional: scVI (heavy; comment out if RAM-limited). Needed ONLY for the scVI half of notebook 14.
+    # NOTE: versions are lower-bounded only; for exact reproducibility, record `pip freeze` after a
+    # successful run of the notebooks and pin it.
     # - scvi-tools>=1.1
     # Optional: GEARS deep learning (requires separate PyTorch + PyG install)
     # Install AFTER activating this env:

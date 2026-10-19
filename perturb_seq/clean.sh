@@ -35,6 +35,7 @@ FILES=(
   "$DATA_DIR/norman_mixscape.h5ad"
   "$DATA_DIR/de_results.pkl"
   "$DATA_DIR/perturbation_scores.csv"
+  "$DATA_DIR/gears_data"
 )
 
 FOUND=()
