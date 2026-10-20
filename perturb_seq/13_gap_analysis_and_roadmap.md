@@ -1,6 +1,6 @@
 # 13 — Gap Analysis and Course Roadmap
 
-This document is an honest assessment of what the current perturb-101 curriculum covers well, where the gaps are, and what stretch topics would meaningfully extend it. It is written for students who have completed notebooks 00–12 and want to know what is missing or what to learn next.
+This document is an honest assessment of what the current perturb-101 curriculum covers well, where the gaps are, and what stretch topics would meaningfully extend it. It is written for students who have completed notebooks 00–14 and want to know what is missing or what to learn next.
 
 ---
 
@@ -42,7 +42,9 @@ These are topics that are covered conceptually but not fully demonstrated in run
 
 ---
 
-### 2. Batch correction not covered
+### 2. Batch correction (now covered)
+
+**Status:** Delivered in `14_batch_correction.ipynb` (Harmony + scVI). The original gap description is kept below for context.
 
 **Where:** After `07_normalization_dimred.ipynb`
 
@@ -54,7 +56,7 @@ These are topics that are covered conceptually but not fully demonstrated in run
 - scVI for joint embedding and batch correction (heavier but more principled)
 - Critical question: should you correct batch effects before or after Mixscape?
 
-**Planned notebook:** `13_batch_correction.ipynb`
+**Delivered as:** `14_batch_correction.ipynb`. (Notebook 13 is `13_differential_abundance.ipynb`, a Milo differential-abundance notebook, also delivered after this document was first written.)
 
 ---
 
@@ -133,7 +135,7 @@ A rigorous answer requires:
 
 This is critical knowledge for experimental design and is currently absent.
 
-**Planned notebook:** `15_power_analysis.ipynb`
+**Planned notebook:** `16_power_analysis.ipynb`
 
 ---
 
@@ -194,7 +196,9 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 
 ---
 
-### `13_batch_correction.ipynb` (Priority 1)
+### `13_batch_correction.ipynb` (delivered as `14_batch_correction.ipynb`)
+
+**Status:** Delivered (see `14_batch_correction.ipynb`). Kept for reference.
 
 **What:** Batch effect diagnosis and correction for multi-batch Perturb-seq screens.
 
@@ -210,7 +214,7 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 
 ---
 
-### `14_dosage_effects.ipynb` (Priority 1)
+### `15_dosage_effects.ipynb` (Priority 1)
 
 **What:** Modeling CRISPRi/a guide efficiency as a continuous variable; dose-response analysis.
 
@@ -228,7 +232,7 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 
 ---
 
-### `15_power_analysis.ipynb` (Priority 1)
+### `16_power_analysis.ipynb` (Priority 1)
 
 **What:** Simulation-based statistical power analysis for Perturb-seq experimental design.
 
@@ -247,7 +251,7 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 
 ---
 
-### `16_regulatory_element_screens.md` (Priority 2)
+### `17_regulatory_element_screens.md` (Priority 2)
 
 **What:** Conceptual overview of CRE-to-gene mapping screens — tiling dCas9-KRAB across enhancers and promoters to identify regulatory elements.
 
@@ -265,7 +269,7 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 
 ---
 
-### `17_multimodal_perturbseq.ipynb` (Priority 2)
+### `18_multimodal_perturbseq.ipynb` (Priority 2)
 
 **What:** ECCITE-seq — simultaneous GEX + surface protein (CITE-seq antibody barcodes) + CRISPR guide capture in the same cells.
 
@@ -283,7 +287,7 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 
 ---
 
-### `18_trajectory_and_cellstate.ipynb` (Priority 2)
+### `19_trajectory_and_cellstate.ipynb` (Priority 2)
 
 **What:** Perturb-seq in differentiating systems; analyzing how perturbations alter cell fate trajectories.
 
@@ -301,7 +305,7 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 
 ---
 
-### `19_comparison_to_bulk_screens.md` (Priority 3)
+### `20_comparison_to_bulk_screens.md` (Priority 3)
 
 **What:** Decision framework for choosing between Perturb-seq and bulk CRISPR screens.
 
@@ -318,7 +322,7 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 
 ---
 
-### `20_emerging_technologies.md` (Priority 3)
+### `21_emerging_technologies.md` (Priority 3)
 
 **What:** Survey of Perturb-seq extensions not yet mature enough for full tutorials.
 
@@ -338,20 +342,20 @@ These are substantive extensions requiring new notebooks or markdown documents. 
 |---|---|---|---|
 | Fix now | Hash verification in notebook 03 | Code edit | No |
 | Fix now | Augur demo in notebook 08 | Code addition | No |
-| High | `15_power_analysis.ipynb` | New notebook | No (simulated) |
-| High | `13_batch_correction.ipynb` | New notebook | No (split Norman) |
-| High | `14_dosage_effects.ipynb` | New notebook | Yes (Jost 2020, GSE132080, small) |
-| Medium | `16_regulatory_element_screens.md` | New markdown | No |
-| Medium | `17_multimodal_perturbseq.ipynb` | New notebook | Yes (Mimitou 2021, GEO) |
-| Medium | `18_trajectory_and_cellstate.ipynb` | New notebook | Yes (scPerturb) |
-| Low | `19_comparison_to_bulk_screens.md` | New markdown | No |
-| Low | `20_emerging_technologies.md` | New markdown | No |
+| High | `16_power_analysis.ipynb` | New notebook | No (simulated) |
+| Done | `14_batch_correction.ipynb` (plus `13_differential_abundance.ipynb`, Milo DA) | Delivered | No (split Norman) |
+| High | `15_dosage_effects.ipynb` | New notebook | Yes (Jost 2020, GSE132080, small) |
+| Medium | `17_regulatory_element_screens.md` | New markdown | No |
+| Medium | `18_multimodal_perturbseq.ipynb` | New notebook | Yes (Mimitou 2021, GEO) |
+| Medium | `19_trajectory_and_cellstate.ipynb` | New notebook | Yes (scPerturb) |
+| Low | `20_comparison_to_bulk_screens.md` | New markdown | No |
+| Low | `21_emerging_technologies.md` | New markdown | No |
 
 ---
 
 ## Recommended Next Steps for Students
 
-If you have finished notebooks 00–12 and want to go deeper:
+If you have finished notebooks 00–14 and want to go deeper:
 
 1. **Immediately actionable:** Read the [pertpy documentation](https://pertpy.readthedocs.io/) — the API evolves quickly and the tutorials there will cover edge cases not shown here.
 
