@@ -40,7 +40,8 @@ dependencies:
     # Batch correction (notebook 14) and differential abundance (notebook 13)
     - harmonypy>=0.0.9
     - milopy>=0.1       # notebook 13 (Milo); imports `milopy`
-    # Optional: scVI (heavy; comment out if RAM-limited). Needed ONLY for the scVI half of notebook 14.
+    # scVI (heavy; commented out by default). REQUIRED to run notebook 14: its cell 1 does an unconditional
+    # `import scvi`, so the Harmony half fails without it too. Uncomment if you plan to run notebook 14.
     # NOTE: versions are lower-bounded only; for exact reproducibility, record `pip freeze` after a
     # successful run of the notebooks and pin it.
     # - scvi-tools>=1.1

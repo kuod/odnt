@@ -28,7 +28,7 @@ Old Dog. New Tricks. A sequentially numbered, end-to-end tutorial for different 
 
 **Total estimated time:** ~25–30 hours for the core Perturb-seq series (00–12). The extra notebooks (13–14), `theis_ecosystem/` and `spatial_transcriptomics/` series (see their READMEs) are additional.
 
-Notebooks 13 and 14 need optional packages (`milopy`; `scvi-tools` for the scVI half of 14) — see `environment.yml`.
+Notebook 13 uses `milopy`, installed by default. Notebook 14 needs `scvi-tools`, which is commented out in `environment.yml` (heavy install); uncomment it before running 14, because its first code cell imports `scvi` unconditionally, so even the Harmony half fails without it. See `environment.yml`.
 
 ---
 
@@ -78,13 +78,15 @@ Downloaded files are stored in `data/` at the repo root (gitignored; notebooks u
         └── 06 (guide assignment)
               └── 07 (normalization)
                     ├── 08 (perturbation effects) ← uses Replogle
+                    ├── 13 (differential abundance, Milo) ← reads norman_assigned.h5ad (07 output)
+                    ├── 14 (batch correction, Harmony + scVI) ← reads norman_assigned.h5ad (07 output)
                     └── 09 (Mixscape)
                           └── 10 (visualization)  ← uses both 08 + 09 outputs
                                 └── 11 (genetic interactions)
                                       └── 12 (GRN + prediction)
 ```
 
-Notebooks 08 and 09 are independent and can be run in parallel after 07.
+Notebooks 08, 09, 13 and 14 are independent of each other and can be run in parallel after 07 (13 and 14 read `norman_assigned.h5ad` directly).
 
 ---
 
